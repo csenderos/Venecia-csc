@@ -1,65 +1,273 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Venecia — csc</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venecia | Descubre la Ciudad de los Canales (CSC)</title>
+    <meta name="description" content="Explora Venecia, la mítica ciudad flotante del Adriático. Planifica tu viaje con nuestro planificador inteligente e itinerarios a medida de 1, 2 o 3 días.">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="hero">
-<nav class="nav">
-<div class="brand">Venecia — <span class="initials">csc</span></div>
-<ul class="menu">
-<li><a href="#about">Sobre</a></li>
-<li><a href="#places">Lugares</a></li>
-<li><a href="#info">Info práctica</a></li>
-</ul>
-</nav>
-<div class="hero-content">
-<h1>Venecia</h1>
-<p>La ciudad sobre el agua: canales, historia y encanto único.</p>
-<a class="cta" href="#places">Explorar</a>
-</div>
-</header>
 
-<main>
-<section id="about" class="card">
-<h2>Sobre Venecia</h2>
-<p>Venecia es famosa por sus canales, plazas y la riqueza artística y arquitectónica que conserva desde siglos atrás.</p>
-</section>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="main-nav">
+        <a href="#" class="nav-logo" id="nav-logo-link">
+            <span>CSC</span> VENEZIA
+        </a>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#descubre">Descubre</a></li>
+            <li><a href="#imperdibles">Imperdibles</a></li>
+            <li><a href="#planificador">Planificador</a></li>
+            <li><a href="#consejos">Consejos</a></li>
+        </ul>
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
 
-<section id="places" class="gallery">
-<h2>Lugares imprescindibles</h2>
-<div class="grid">
-<figure>
-<img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="Canal de Venecia" />
-<figcaption>Canales y góndolas</figcaption>
-</figure>
-<figure>
-<img src="https://images.unsplash.com/photo-1505765050372-1f6b4e5d7d6b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="Plaza San Marcos" />
-<figcaption>Plaza San Marcos</figcaption>
-</figure>
-<figure>
-<img src="https://images.unsplash.com/photo-1526925539332-aa8f8a8f1a3b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="Arquitectura veneciana" />
-<figcaption>Arquitectura histórica</figcaption>
-</figure>
-</div>
-</section>
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="hero-tagline">Guía Exclusiva de Viaje</p>
+            <h1 class="hero-title">Venecia, la ciudad<br>donde el tiempo <span>se detiene</span></h1>
+            <a href="#planificador" class="hero-btn" id="hero-cta-btn">Planificar mi Viaje</a>
+        </div>
+    </header>
 
-<section id="info" class="card">
-<h2>Información práctica</h2>
-<ul>
-<li>Cómo llegar: avión a Marco Polo o tren a Santa Lucia.</li>
-<li>Transporte: vaporetto, góndola y caminar por las islas.</li>
-<li>Consejo: madruga para evitar multitudes en San Marcos.</li>
-</ul>
-</section>
-</main>
+    <!-- Overview / Description Section -->
+    <section class="overview scroll-anim" id="descubre">
+        <div class="overview-grid">
+            <div class="overview-text">
+                <span class="section-subtitle">Sobre Venecia</span>
+                <h2 class="section-title">Un Laberinto de Historia</h2>
+                <p class="lead" style="margin-top: 1.5rem;">Venecia, capital de la región de Véneto en el norte de Italia, es un prodigio de la ingeniería y el arte, construida sobre un archipiélago de pequeñas islas unidas por puentes.</p>
+                <p>Navegar en góndola por sus canales medievales, admirar la suntuosa arquitectura renacentista y perderse en el misticismo de sus callejuelas estrechas es una experiencia que transforma a todo viajero. Sin coches, sin el ruido del tráfico moderno; solo el sonido del agua y de la historia resonando en sus fachadas de piedra.</p>
+                
+                <!-- Quick Venice Stats -->
+                <div class="overview-stats">
+                    <div class="stat-item" id="stat-islands">
+                        <span class="stat-number">118</span>
+                        <span class="stat-label">Islas</span>
+                    </div>
+                    <div class="stat-item" id="stat-bridges">
+                        <span class="stat-number">417</span>
+                        <span class="stat-label">Puentes</span>
+                    </div>
+                    <div class="stat-item" id="stat-canals">
+                        <span class="stat-number">177</span>
+                        <span class="stat-label">Canales</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overview-image-container">
+                <img src="images/hero.png" alt="Precioso canal de Venecia al atardecer" class="overview-img" id="overview-display-img">
+                <div class="overview-floating-card">
+                    <h4>Patrimonio de la Humanidad</h4>
+                    <p>Reconocida por la UNESCO por su singularidad y valor cultural incomparable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer">
-<p>Creado por <strong>csc</strong> — Imágenes de Unsplash</p>
-<p><a href="https://unsplash.com/s/photos/venice" target="_blank" rel="noopener">Más fotos en Unsplash</a></p>
-</footer>
+    <!-- Places to Visit / Highlight Cards -->
+    <section class="places scroll-anim" id="imperdibles">
+        <div class="section-header">
+            <span class="section-subtitle">Lugares Únicos</span>
+            <h2 class="section-title">Los Tres Imperdibles</h2>
+        </div>
+        
+        <div class="places-grid">
+            <!-- Card 1: Gondolas -->
+            <article class="place-card" id="card-gondolas">
+                <div class="place-img-wrapper">
+                    <img src="images/gondola.png" alt="Góndola negra amarrada en un canal veneciano" class="place-img">
+                    <span class="place-tag">Experiencia</span>
+                </div>
+                <div class="place-info">
+                    <h3 class="place-title">Los Canales y Góndolas</h3>
+                    <p class="place-description">La red fluvial de Venecia es el alma de la ciudad. Un paseo en góndola te permitirá descubrir rincones ocultos y palacios cuyos cimientos de madera han resistido siglos bajo el agua.</p>
+                    <a href="#planificador" class="place-link">Incluir en mi ruta <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Card 2: Rialto -->
+            <article class="place-card" id="card-rialto">
+                <div class="place-img-wrapper">
+                    <img src="images/rialto.png" alt="El Puente de Rialto cruzando el Gran Canal" class="place-img">
+                    <span class="place-tag">Arquitectura</span>
+                </div>
+                <div class="place-info">
+                    <h3 class="place-title">Puente de Rialto</h3>
+                    <p class="place-description">El puente más antiguo y emblemático de los cuatro que cruzan el Gran Canal. Su arco de piedra y su doble fila de tiendas de souvenirs forman una estampa inconfundible de Venecia.</p>
+                    <a href="#planificador" class="place-link">Incluir en mi ruta <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Card 3: Plaza San Marcos (Uses hero picture as background base for visual consistency) -->
+            <article class="place-card" id="card-sanmarcos">
+                <div class="place-img-wrapper">
+                    <img src="images/hero.png" alt="Gran Canal y cúpulas en Venecia" class="place-img">
+                    <span class="place-tag">Historia</span>
+                </div>
+                <div class="place-info">
+                    <h3 class="place-title">El Gran Canal</h3>
+                    <p class="place-description">La avenida principal de la ciudad flotante. Un vibrante cauce de 4 kilómetros rodeado de más de 170 palacios imperiales bizantinos, góticos, renacentistas y barrocos.</p>
+                    <a href="#planificador" class="place-link">Incluir en mi ruta <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Itinerary Planner Section -->
+    <section class="planner scroll-anim" id="planificador">
+        <div class="section-header">
+            <span class="section-subtitle">Planificador Inteligente</span>
+            <h2 class="section-title">Crea tu Ruta en Segundos</h2>
+        </div>
+        
+        <div class="planner-container">
+            <form class="planner-form" id="venice-planner-form">
+                <!-- Group 1: Days -->
+                <div class="form-group">
+                    <label for="travel-days">Duración del viaje</label>
+                    <select id="travel-days" name="days" aria-label="Seleccionar duración en días">
+                        <option value="1" selected>1 Día (Lo esencial)</option>
+                        <option value="2">2 Días (Descubrimiento)</option>
+                        <option value="3">3 Días (Explorador completo)</option>
+                    </select>
+                </div>
+                
+                <!-- Group 2: Budget -->
+                <div class="form-group">
+                    <label for="travel-budget">Presupuesto</label>
+                    <select id="travel-budget" name="budget" aria-label="Seleccionar presupuesto">
+                        <option value="low">Económico (Viajero mochilero)</option>
+                        <option value="medium" selected>Moderado (Experiencia estándar)</option>
+                        <option value="premium">Premium (Lujo y exclusividad)</option>
+                    </select>
+                </div>
+                
+                <!-- Group 3: Style -->
+                <div class="form-group">
+                    <label for="travel-style">Estilo de Viaje</label>
+                    <select id="travel-style" name="style" aria-label="Seleccionar estilo de viaje">
+                        <option value="cultural" selected>Histórico / Cultural</option>
+                        <option value="romantic">Romántico y Escénico</option>
+                        <option value="adventure">Aventura y Curiosidades</option>
+                    </select>
+                </div>
+                
+                <!-- Button -->
+                <div class="planner-btn-container">
+                    <button type="submit" class="planner-submit" id="generate-itinerary-btn">
+                        Generar mi itinerario ideal
+                    </button>
+                </div>
+            </form>
+
+            <!-- Results target (populated dynamically) -->
+            <div class="itinerary-results" id="itinerary-results"></div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Accordion Section -->
+    <section class="tips scroll-anim" id="consejos">
+        <div class="section-header">
+            <span class="section-subtitle">Información Práctica</span>
+            <h2 class="section-title">Consejos de un Veneciano</h2>
+        </div>
+        
+        <div class="tips-container">
+            <!-- Item 1 -->
+            <div class="accordion-item" id="tip-when-to-visit">
+                <div class="accordion-header">
+                    <span>¿Cuál es la mejor época para viajar a Venecia?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>La mejor época para viajar es durante la **primavera (abril a junio)** y el **otoño (septiembre a octubre)**. Las temperaturas son agradables, hay menos humedad y evitas las grandes aglomeraciones de turistas del verano.</p>
+                    <p>Si viajas en invierno, podrías experimentar el fenómeno del **Acqua Alta** (marea alta), una inundación temporal de la ciudad que dura unas pocas horas y resulta una experiencia única, para la cual solo necesitarás unas botas altas de agua.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item" id="tip-how-to-move">
+                <div class="accordion-header">
+                    <span>¿Cómo moverse por la ciudad sin morir en el intento?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>En Venecia **no existen los coches**. La única forma de desplazarse es a pie o en barco. El medio de transporte público es el **Vaporetto**, un autobús acuático que recorre el Gran Canal y conecta con las islas vecinas como Murano y Burano.</p>
+                    <p>Para cruzar el Gran Canal de un lado a otro por zonas sin puente, busca los carteles de **Traghetto**. Son góndolas grandes manejadas por dos gondoleros que te cruzan de orilla por solo 2 euros.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item" id="tip-local-gastronomy">
+                <div class="accordion-header">
+                    <span>Gastronomía típica: ¿Qué y dónde comer?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Evita los menús turísticos con fotos en la entrada. Lo mejor es ir de **Bari** en bar por los tradicionales *Bacari* venecianos y pedir *Cicchetti* (tapas locales) acompañados de un *Ombra* (pequeño vaso de vino de la casa) o un Spritz.</p>
+                    <p>No dejes de probar el *Baccalà Mantecato* (bacalao cremoso sobre polenta), las *Sarde in Saor* (sardinas marinadas agridulces) o los espaguetis con tinta de calamar (*Spaghetti al nero di seppia*).</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="accordion-item" id="tip-signature">
+                <div class="accordion-header">
+                    <span>Sobre esta guía de Venecia (CSC)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Esta página web ha sido diseñada e implementada utilizando herramientas de Inteligencia Artificial para la práctica oficial de desarrollo rápido de sitios web públicos.</p>
+                    <p>Las iniciales **CSC** son la marca distintiva del alumno autor de este proyecto, integradas estéticamente en el logotipo, el planificador y el pie de página del portal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="contacto">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>VENEZIA<span>CSC</span></h2>
+                <p>Venecia es una obra de arte al aire libre. Esperamos que esta guía interactiva te inspire y te ayude a planificar una experiencia verdaderamente inolvidable en la reina del Adriático.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#descubre">Descubre</a></li>
+                    <li><a href="#imperdibles">Imperdibles</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>Viaje</h4>
+                <ul class="footer-links">
+                    <li><a href="#planificador">Planificador</a></li>
+                    <li><a href="#consejos">Consejos Útiles</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Guía Interactiva de Venecia. Todos los derechos reservados.</p>
+            <p class="footer-signature">Desarrollado para fines académicos por <span>CSC</span></p>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript File -->
+    <script src="app.js"></script>
 </body>
-</html>index.html 
+</html>
